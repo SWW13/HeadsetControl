@@ -13,6 +13,17 @@ static const uint16_t PRODUCT_ID = 0x2069;
 
 static int q810_lights(hid_device* device_handle, uint8_t on);
 
+#define SET_LIGHTS   0x4b // 0 = off, 1 = on
+#define SET_ANC      0x46 // 0 = off, 1 = on, 2 = tt (talk through)
+#define SET_SIDETONE 0x5d // 0 = off, 1 = low, 2 = mid, 3 = high
+
+#define IRQ_ANC     0x02 // 0 = off, 1 = on, 2 = tt (talk through)
+#define IRQ_03      0x03 // 0x03 ???
+#define IRQ_MIC     0x06 // 0 = off, 1 = on
+#define IRQ_LIGHTS  0x07 // 0 = off, 1 = on
+#define IRQ_BATTERY 0x08 // 0 .. 100 battery charge in percent (?)
+#define IRQ_SOUND   0x10 // 0 = chat ... 0x10 = game: sound mix
+
 void q810_init(struct device** device)
 {
     device_q810.idVendor            = VENDOR_JBL;
@@ -36,6 +47,6 @@ void q810_init(struct device** device)
 
 static int q810_lights(hid_device* device_handle, uint8_t on)
 {
-    unsigned char data[2] = { 0x4b, on };
+    unsigned char data[2] = { SET_LIGHTS, on };
     return hid_write(device_handle, data, 2);
 }
