@@ -7,6 +7,8 @@ set(SOURCE_FILES ${SOURCE_FILES}
     ${CMAKE_CURRENT_SOURCE_DIR}/hyperx_cloud_3.h
     ${CMAKE_CURRENT_SOURCE_DIR}/corsair_void.c
     ${CMAKE_CURRENT_SOURCE_DIR}/corsair_void.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/jbl_q810.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/jbl_q810.h
     ${CMAKE_CURRENT_SOURCE_DIR}/logitech_g930.c
     ${CMAKE_CURRENT_SOURCE_DIR}/logitech_g930.h
     ${CMAKE_CURRENT_SOURCE_DIR}/logitech_g430.c

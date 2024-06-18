@@ -5,6 +5,7 @@
 #include "devices/hyperx_calphaw.h"
 #include "devices/hyperx_cflight.h"
 #include "devices/hyperx_cloud_3.h"
+#include "devices/jbl_q810.h"
 #include "devices/logitech_g430.h"
 #include "devices/logitech_g432.h"
 #include "devices/logitech_g533.h"
@@ -44,6 +45,8 @@ void init_devices()
     add_device(calphaw_init);
     add_device(cflight_init);
     add_device(hyperx_cloud3_init);
+    // JBL
+    add_device(q810_init);
     // Logitech
     add_device(g430_init);
     add_device(g432_init);
